@@ -13,7 +13,7 @@ local prompt="${1:-}"
 local default="${2:-}"
 local value
 
-```
+
 if [[ -n "$default" ]]; then
     read -rp "$prompt [$default]: " value
     value=${value:-$default}
@@ -22,7 +22,7 @@ else
 fi
 
 echo "$value"
-```
+
 
 }
 
@@ -30,7 +30,7 @@ get_yes_no() {
 local prompt="$1"
 local default="$2"
 
-```
+
 while true; do
     local answer
     answer=$(get_input "$prompt" "$default")
@@ -42,14 +42,14 @@ while true; do
         *) echo "Please answer y or n." ;;
     esac
 done
-```
+
 
 }
 
 validate_port_range() {
 local range="$1"
 
-```
+
 [[ "$range" =~ ^[0-9]+-[0-9]+$ ]] || return 1
 
 local start=${range%-*}
@@ -60,7 +60,7 @@ local end=${range#*-}
 (( start <= end )) || return 1
 
 return 0
-```
+
 
 }
 
@@ -101,12 +101,12 @@ PORT_RANGE=""
 while [[ -z "${PORT_RANGE:-}" ]]; do
 PORT_RANGE=$(get_input "Enter the Mieru port range (start-end)" "9000-9010")
 
-```
+
 if ! validate_port_range "$PORT_RANGE"; then
     echo "Invalid range."
     PORT_RANGE=""
 fi
-```
+
 
 done
 
