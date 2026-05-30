@@ -7,7 +7,7 @@ Telegram bot for managing [mieru](https://github.com/enfein/mieru) users
 Run the setup script:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/fluffur/mieru-bot/main/setup_bot.sh | bash
+bash <(curl -fsSL https://raw.githubusercontent.com/fluffur/mieru-bot/main/setup_bot.sh)
 ```
 
 The script will ask for:
